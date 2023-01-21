@@ -1,12 +1,24 @@
 {
-  "usuarios" : [{
-    "id": 1,
-    "username": "awa",
-    "password": "awa",
-    "conductor": true,
-    "carrera": "Analista Programador Computacional",
-    "sede" : "San Bernardo",
-    "firstName": "Diego",
-    "lastName": "Castro"
-    }]
+  "usuarios": [
+    {
+      "id": 1,
+      "username": "awa",
+      "password": "awa",
+      "conductor": true,
+      "carrera": "Analista Programador Computacional",
+      "sede": "San Bernardo",
+      "firstName": "Diego",
+      "lastName": "Castro"
+    },
+    {
+      "username": "awa",
+      "password": "awa",
+      "id": 2
+    },
+    {
+      "username": "awa",
+      "password": "awa",
+      "id": 3
+    }
+  ]
 }
