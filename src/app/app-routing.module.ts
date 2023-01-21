@@ -23,6 +23,11 @@ const routes: Routes = [
     path: 'recuperar-password',
     loadChildren: () => import('./pages/recuperar-password/recuperar-password.module').then( m => m.RecuperarPasswordPageModule)
   },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },
+
 ];
 
 @NgModule({

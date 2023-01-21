@@ -5,5 +5,24 @@
 </ion-header>
 
 <ion-content>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col>
+        <form>
+          <ion-item>
+            <ion-label position="floating">Username <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required formControlName="username" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input required formControlName="password" type="passworad"></ion-input>
+          </ion-item>
+          <ion-button block color="primary" type="submit">
+            Login
+          </ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
