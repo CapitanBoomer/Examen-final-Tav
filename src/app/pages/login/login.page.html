@@ -9,10 +9,10 @@
 <ion-content>
   <ion-grid fixed>
     <ion-img [src]="'https://www.irontec.com/image/trainingsFull/38-curso-desarrollo-apps-ionic.png'"></ion-img>
-    <form [formGroup]="formularioLog" (ngSubmit)="validar()">
 
+    <form [formGroup]="formularioLog" (ngSubmit)="validar()">
       <ion-row>
-        <ion-col size="12">
+        <ion-col>
           <ion-item>
             <ion-label position="floating">Username</ion-label>
             <ion-input required formControlName="username" type="text"></ion-input>
@@ -21,7 +21,7 @@
       </ion-row>
 
       <ion-row>
-        <ion-col size="12">
+        <ion-col>
           <ion-item>
             <ion-label position="floating">Password</ion-label>
             <ion-input required formControlName="password" type="password"></ion-input>
@@ -30,7 +30,7 @@
       </ion-row>
 
       <ion-row>
-        <ion-col size="12">
+        <ion-col>
           <ion-button expand="block" shape="round" color="primary" type="submit">
             <ion-icon name="log-in-outline" slot="end"></ion-icon>
             Iniciar sesión
@@ -48,7 +48,7 @@
       </ion-row>
 
       <ion-row>
-        <ion-col size="12">
+        <ion-col>
           <ion-button expand="block" shape="round" color="warning">
             <ion-icon name="person-add-outline" slot="end"></ion-icon>
             ¿No tienes una cuenta?
