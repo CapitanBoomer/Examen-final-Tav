@@ -1,0 +1,24 @@
+{
+"Usuarios":[{
+id:1,
+"username"pedritopasc",
+"password":"pascal123",
+"conductor":true,
+"carrera":"mecanica",
+"sede":"san bernardo",
+}],
+"viajes": [
+    {
+	"id": 1,
+      "nombreusuario": "",
+      "auto": "",
+      "costoviaje": 0,
+      "destino": "",
+      "puestos": 0,
+      "patente": "123dsa",
+      "detalles": "detalles"
+      
+    }
+  ]
+
+}
