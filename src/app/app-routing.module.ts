@@ -8,7 +8,7 @@ const routes: Routes = [
   //},
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'inicio',
     pathMatch: 'full'
   },
   {
@@ -16,13 +16,17 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'pagina-de-inicio',
+    path: 'inicio',
     loadChildren: () => import('./pages/pagina-de-inicio/pagina-de-inicio.module').then( m => m.PaginaDeInicioPageModule)
   },
   {
     path: 'recuperarCon',
     loadChildren: () => import('./pages/recuperar-password/recuperar-password.module').then( m => m.RecuperarPasswordPageModule)
+  },  {
+    path: 'registro',
+    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
+
 ];
 
 @NgModule({
