@@ -46,8 +46,8 @@
       <ion-row>
         <ion-col size="12">
           <ion-item>
-            <ion-label>Gender</ion-label>
-            <ion-select >
+            <ion-label>Genero</ion-label>
+            <ion-select formControlName="gender">
               <ion-select-option value="masculino">Masculino</ion-select-option>
               <ion-select-option value="femenino">Femenino</ion-select-option>
               <ion-select-option value="otro">Otro</ion-select-option>
@@ -58,10 +58,13 @@
 
       <ion-row>
         <ion-col size="12">
-          <ion-item>
-            <ion-label>Carrera</ion-label>
-            <ion-input type="text" placeholder="Awesome Input"></ion-input>
-          </ion-item>
+            <ion-item>
+              <ion-label>Carrera</ion-label>
+              <ion-select>
+                <ion-select-option value="analista">Analista</ion-select-option>
+                <ion-select-option value="programador">Programador</ion-select-option>
+              </ion-select>
+            </ion-item>
         </ion-col>
       </ion-row>
 
@@ -91,8 +94,8 @@
           <ion-item>
             <ion-label>Comuna de origen</ion-label>
             <ion-select>
-              <ion-select-option value="peperoni">Peperoni</ion-select-option>
-              <ion-select-option value="hawaii">Hawaii</ion-select-option>
+              <ion-select-option value="peperoni">Agregar las comunas con un ciclo for</ion-select-option>
+              <ion-select-option value="hawaii"></ion-select-option>
             </ion-select>
           </ion-item>
         </ion-col>
