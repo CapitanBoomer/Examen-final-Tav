@@ -15,16 +15,16 @@ export class LoginPage implements OnInit {
     private servicioauth:AuthService
   ) {
     this.formularioLog = builder.group({
-      username : ['',[Validators.required]],
-      password : ['', [Validators.required]]
+      username : ['',[Validators.required, Validators.minLength(3)]],
+      password : ['', [Validators.required, Validators.maxLength(20)]]
     })
   }
 
   public validar(){
-this.servicioauth.validadorauth({
-  username:this.formularioLog.value.username,
-  password:this.formularioLog.value.password
-})
+    this.servicioauth.validadorauth({
+    username:this.formularioLog.value.username,
+    password:this.formularioLog.value.password
+    })
   }
 
   ngOnInit() {

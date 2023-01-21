@@ -2,23 +2,62 @@
   "usuarios": [
     {
       "id": 1,
-      "username": "awa",
-      "password": "awa",
-      "conductor": true,
-      "carrera": "Analista Programador Computacional",
+      "username": "usernam2",
+      "password": "password1",
+      "conductor": false,
       "sede": "San Bernardo",
-      "firstName": "Diego",
-      "lastName": "Castro"
+      "firstName": "Diego1",
+      "lastName": "Castro1",
+      "email" : "Di1.Cas@duocuc.cl"
     },
     {
-      "username": "awa",
-      "password": "awa",
-      "id": 2
+      "id": 1,
+      "username": "username1",
+      "password": "password2",
+      "conductor": true,
+      "sede": "San Bernardo",
+      "firstName": "Diego2",
+      "lastName": "Castro2",
+      "email" : "Di2.Cas@duocuc.cl"
     },
     {
-      "username": "awa",
-      "password": "awa",
-      "id": 3
+      "id": 1,
+      "username": "username1",
+      "password": "password3",
+      "conductor": true,
+      "sede": "San Bernardo",
+      "firstName": "Diego3",
+      "lastName": "Castro3",
+      "email" : "Di3.Cas@duocuc.cl"
     }
+  ],
+  "Carrera": [
+    {
+      "idCarrera": 1,
+      "nombreCarrera": "Analista"
+    },
+    {
+      "idCarrera": 2,
+      "nombreCarrera": "Programador"
+    },
+    {
+      "idCarrera": 3,
+      "nombreCarrera": "Cocina"
+    }
+
+  ],
+  "Comunas":[
+  {
+    "idComuna": 1,
+    "nombreComuna": "San Bernardo"
+  },
+  {
+    "idComuna": 2,
+    "nombreComuna": "Peñalolen"
+  },
+  {
+    "idComuna": 3,
+    "nombreComuna" : "PuenteAlto"
+  }
   ]
 }

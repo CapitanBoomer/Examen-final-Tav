@@ -11,10 +11,18 @@ export class AuthService {
   constructor(private http: HttpClient, private ruta: Router) { }
 
   public validadorauth({ username, password }: Usuarios) {
-    this.http.post<datoscompletos>(this.urlauth, { username, password }, {
-      headers: {
+    this.http.post<datoscompletos>(this.urlauth,{
+       username, password
+      },{
+      headers:
+      {
         'Content-Type': 'application/json'
       }
-    }).subscribe(datos => { if (datos) { this.datosauth = datos, this.ruta.navigate(['/inicio']) } })
+    }).subscribe(datos => {
+      if(datos){
+        this.datosauth = datos,
+        this.ruta.navigate(['/inicio'])
+      }
+      })
   }
 }
