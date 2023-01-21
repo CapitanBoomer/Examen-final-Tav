@@ -1,28 +1,62 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" text="home"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid fixed>
-    <ion-row>
-      <ion-col>
-        <form>
+    <ion-img [src]="'https://www.irontec.com/image/trainingsFull/38-curso-desarrollo-apps-ionic.png'"></ion-img>
+    <form [formGroup]="formularioLog" (ngSubmit)="validar()">
+
+      <ion-row>
+        <ion-col size="12">
           <ion-item>
-            <ion-label position="floating">Username <ion-text color="danger">*</ion-text></ion-label>
+            <ion-label position="floating">Username</ion-label>
             <ion-input required formControlName="username" type="text"></ion-input>
           </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
           <ion-item>
             <ion-label position="floating">Password</ion-label>
-            <ion-input required formControlName="password" type="passworad"></ion-input>
+            <ion-input required formControlName="password" type="password"></ion-input>
           </ion-item>
-          <ion-button block color="primary" type="submit">
-            Login
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-button expand="block" shape="round" color="primary" type="submit">
+            <ion-icon name="log-in-outline" slot="end"></ion-icon>
+            Iniciar sesión
           </ion-button>
-        </form>
-      </ion-col>
-    </ion-row>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" shape="round" color="danger">
+            <ion-icon name="help-circle-outline" slot="end"></ion-icon>
+            ¿Olvidaste tu contraseña ?
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-button expand="block" shape="round" color="warning">
+            <ion-icon name="person-add-outline" slot="end"></ion-icon>
+            ¿No tienes una cuenta?
+          </ion-button>
+        </ion-col>
+      </ion-row>
+
+    </form>
   </ion-grid>
 
 </ion-content>
