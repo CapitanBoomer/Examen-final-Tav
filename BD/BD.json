@@ -2,7 +2,7 @@
   "usuarios": [
     {
       "id": 1,
-      "username": "usernam2",
+      "username": "username1",
       "password": "password1",
       "conductor": false,
       "sede": "San Bernardo",
@@ -11,8 +11,8 @@
       "email" : "Di1.Cas@duocuc.cl"
     },
     {
-      "id": 1,
-      "username": "username1",
+      "id": 2,
+      "username": "username2",
       "password": "password2",
       "conductor": true,
       "sede": "San Bernardo",
@@ -21,8 +21,8 @@
       "email" : "Di2.Cas@duocuc.cl"
     },
     {
-      "id": 1,
-      "username": "username1",
+      "id": 3,
+      "username": "username3",
       "password": "password3",
       "conductor": true,
       "sede": "San Bernardo",
