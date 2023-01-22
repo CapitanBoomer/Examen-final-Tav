@@ -4,7 +4,7 @@ export interface Usuarios {
 }
 export interface datoscompletos{
   id: number,
-  usernamr: string,
+  username: string,
   password: string,
   conductor: boolean,
   carrera: string,
