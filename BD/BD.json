@@ -57,6 +57,7 @@
   ],
   "Comunas": [
     {
+<<<<<<< HEAD
       "idComuna": 1,
       "nombreComuna": "San Bernardo"
     },
@@ -87,6 +88,24 @@
       "nombreSede": "San Carlos de Apoquindo",
       "altitud": "",
       "latitud": ""
+=======
+    "id": 1,
+    "nombreSede" : "San Bernardo",
+    "longitud": "-70.7046133",
+    "latitud": "-33.5946522"
+    },
+    {
+      "id": 2,
+      "nombreSede" : "Maipu",
+      "longitud" : "-70.7184752498309",
+      "latitud" : "-33.51505225"
+    },
+    {
+      "id" : 3,
+      "nombreSede" : "San Carlos de Apoquindo",
+      "longitud" :"-70.5129429194474",
+      "latitud" :"-33.4005462"
+>>>>>>> 96bd7dd17e837686fc8b42df7d2c0d7e1e8b77b5
     }
   ]
 }
