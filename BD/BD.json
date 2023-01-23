@@ -8,7 +8,7 @@
       "sede": "San Bernardo",
       "firstName": "Diego1",
       "lastName": "Castro1",
-      "email" : "Di1.Cas@duocuc.cl"
+      "email": "Di1.Cas@duocuc.cl"
     },
     {
       "id": 2,
@@ -18,7 +18,7 @@
       "sede": "San Bernardo",
       "firstName": "Diego2",
       "lastName": "Castro2",
-      "email" : "Di2.Cas@duocuc.cl"
+      "email": "Di2.Cas@duocuc.cl"
     },
     {
       "id": 3,
@@ -28,7 +28,17 @@
       "sede": "San Bernardo",
       "firstName": "Diego3",
       "lastName": "Castro3",
-      "email" : "Di3.Cas@duocuc.cl"
+      "email": "Di3.Cas@duocuc.cl"
+    },
+    {
+      "username": "dsadas",
+      "email": "",
+      "id": 4
+    },
+    {
+      "username": "",
+      "email": "",
+      "id": 5
     }
   ],
   "Carrera": [
@@ -44,40 +54,39 @@
       "idCarrera": 3,
       "nombreCarrera": "Cocina"
     }
-
   ],
-  "Comunas":[
-  {
-    "idComuna": 1,
-    "nombreComuna": "San Bernardo"
-  },
-  {
-    "idComuna": 2,
-    "nombreComuna": "Peñalolen"
-  },
-  {
-    "idComuna": 3,
-    "nombreComuna" : "PuenteAlto"
-  }
-  ],
-  "Sede":[
+  "Comunas": [
     {
-    "id": 1,
-    "nombreSede" : "San Bernardo",
-    "altitud": "",
-    "latitud": ""
+      "idComuna": 1,
+      "nombreComuna": "San Bernardo"
+    },
+    {
+      "idComuna": 2,
+      "nombreComuna": "Peñalolen"
+    },
+    {
+      "idComuna": 3,
+      "nombreComuna": "PuenteAlto"
+    }
+  ],
+  "Sede": [
+    {
+      "id": 1,
+      "nombreSede": "San Bernardo",
+      "altitud": "",
+      "latitud": ""
     },
     {
       "id": 2,
-      "nombreSede" : "Maipu",
-      "altitud" : "",
-      "latitud" : ""
+      "nombreSede": "Maipu",
+      "altitud": "",
+      "latitud": ""
     },
     {
-      "id" : 3,
-      "nombreSede" : "San Carlos de Apoquindo",
-      "altitud" :"",
-      "latitud" : ""
+      "id": 3,
+      "nombreSede": "San Carlos de Apoquindo",
+      "altitud": "",
+      "latitud": ""
     }
   ]
 }

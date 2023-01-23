@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Usuarios, datoscompletos } from '../../interfaces/usarios/usuarios';
+import { Usuarios, datoscompletos,ObtCon } from '../../interfaces/usarios/usuarios';
 import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +13,8 @@ export class AuthService {
 
   public validadorauth({ username, password }: Usuarios) {
     this.http.post<datoscompletos>(this.urlauth,{
-       username, password
+      username,
+      password
       },{
       headers:
       {
@@ -25,4 +27,27 @@ export class AuthService {
       }
       })
   }
+
+//Esta parte la hiso el Jhoel
+
+
+  public ObtenerContraseña({ username , email  }: ObtCon) {
+    this.http.post<datoscompletos>(this.urlauth,{
+      username,
+      email
+      },{
+      headers:
+      {
+        'Content-Type': 'application/json'
+      }
+    }).subscribe(datos => {
+      if(datos){
+        this.datosauth = datos,
+        this.ruta.navigate(['/contrasena'])
+      }
+      })
+  }
+
+
+
 }

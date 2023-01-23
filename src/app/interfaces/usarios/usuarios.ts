@@ -13,3 +13,7 @@ export interface datoscompletos{
   lastName: string,
   email:string
 }
+export interface ObtCon{
+  username : string,
+  email : string
+}
