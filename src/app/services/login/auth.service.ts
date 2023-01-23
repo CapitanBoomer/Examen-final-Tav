@@ -30,12 +30,8 @@ export class AuthService {
 
 //Esta parte la hiso el Jhoel
 
-
   public ObtenerContraseña({ username , email  }: ObtCon) {
-    this.http.post<Datoscompletos>(this.urlauth,{
-      username,
-      email
-      },{
+    this.http.get<Datoscompletos>(this.urlauth,{
       headers:
       {
         'Content-Type': 'application/json'

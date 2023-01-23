@@ -23,10 +23,11 @@ export class RecuperarPasswordPage implements OnInit {
   }
 
   public validar (){
+    if(this.ionicFormGroup.valid){
     this.servicio.ObtenerContraseña({
       username: this.ionicFormGroup.value['username'],
       email: this.ionicFormGroup.value['email']
-    })
+    })}
   }
 
 
