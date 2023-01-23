@@ -59,5 +59,25 @@
     "idComuna": 3,
     "nombreComuna" : "PuenteAlto"
   }
+  ],
+  "Sede":[
+    {
+    "id": 1,
+    "nombreSede" : "San Bernardo",
+    "altitud": "",
+    "latitud": ""
+    },
+    {
+      "id": 2,
+      "nombreSede" : "Maipu",
+      "altitud" : "",
+      "latitud" : ""
+    },
+    {
+      "id" : 3,
+      "nombreSede" : "San Carlos de Apoquindo",
+      "altitud" :"",
+      "latitud" : ""
+    }
   ]
 }
