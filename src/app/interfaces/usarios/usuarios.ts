@@ -1,8 +1,9 @@
+
 export interface Usuarios {
   username:string,
   password:string,
 }
-export interface datoscompletos{
+export interface Datoscompletos{
   id: number,
   username: string,
   password: string,
@@ -12,4 +13,8 @@ export interface datoscompletos{
   firstName: string,
   lastName: string,
   email:string
+}
+
+export interface Carrera extends Datoscompletos{
+  nombreCarrera : string
 }
