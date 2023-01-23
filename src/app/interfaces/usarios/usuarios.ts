@@ -15,6 +15,12 @@ export interface Datoscompletos{
   email:string
 }
 
+export interface ObtCon{
+  username : string,
+  email : string
+}
+
+
 export interface Carrera extends Datoscompletos{
   nombreCarrera : string
 }
