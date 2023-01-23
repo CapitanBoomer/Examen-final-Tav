@@ -10,5 +10,6 @@ export interface datoscompletos{
   carrera: string,
   sede : string,
   firstName: string,
-  lastName: string
+  lastName: string,
+  email:string
 }
