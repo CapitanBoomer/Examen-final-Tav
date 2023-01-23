@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Usuarios, datoscompletos,ObtCon } from '../../interfaces/usarios/usuarios';
+import { Usuarios, Datoscompletos,ObtCon } from '../../interfaces/usarios/usuarios';
 import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router';
 
@@ -8,11 +8,11 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
   private urlauth: string = 'http://localhost:3000/usuarios'
-  public datosauth: datoscompletos | null = null
+  public datosauth: Datoscompletos | null = null
   constructor(private http: HttpClient, private ruta: Router) { }
 
   public validadorauth({ username, password }: Usuarios) {
-    this.http.post<datoscompletos>(this.urlauth,{
+    this.http.post<Datoscompletos>(this.urlauth,{
       username,
       password
       },{
@@ -32,7 +32,7 @@ export class AuthService {
 
 
   public ObtenerContraseña({ username , email  }: ObtCon) {
-    this.http.post<datoscompletos>(this.urlauth,{
+    this.http.post<Datoscompletos>(this.urlauth,{
       username,
       email
       },{
