@@ -21,11 +21,16 @@ export class LoginPage implements OnInit {
   }
 
   public validar(){
-    this.servicioauth.validadorauth({
-    username:this.formularioLog.value.username,
-    password:this.formularioLog.value.password
-    })
+    if(this.formularioLog.valid){
+      this.servicioauth.validadorauth({
+        username:this.formularioLog.value.username,
+        password:this.formularioLog.value.password
+        })
+
+    }
+
   }
+
 
   ngOnInit() {
   }
