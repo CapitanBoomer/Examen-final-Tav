@@ -60,7 +60,7 @@
         <ion-col size="12">
             <ion-item>
               <ion-label>Carrera</ion-label>
-              <ion-select>
+              <ion-select formControlName="carrera">
                 <ion-select-option value="analista">Analista</ion-select-option>
                 <ion-select-option value="programador">Programador</ion-select-option>
               </ion-select>
@@ -72,7 +72,7 @@
         <ion-col size="12">
           <ion-item>
             <ion-label>Edad</ion-label>
-            <ion-input type="number"></ion-input>
+            <ion-input formControlName="edad" type="number"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -81,7 +81,7 @@
         <ion-col size="12">
           <ion-item>
             <ion-label>Sede</ion-label>
-            <ion-select>
+            <ion-select formControlName="sede">
               <ion-select-option value="peperoni">Agregar las sedes con un ciclo for</ion-select-option>
               <ion-select-option value="hawaii">Agregar sedes</ion-select-option>
             </ion-select>
@@ -93,7 +93,7 @@
         <ion-col size="12">
           <ion-item>
             <ion-label>Comuna de origen</ion-label>
-            <ion-select>
+            <ion-select formControlName="comunOrigen">
               <ion-select-option value="peperoni">Agregar las comunas con un ciclo for</ion-select-option>
               <ion-select-option value="hawaii"></ion-select-option>
             </ion-select>
