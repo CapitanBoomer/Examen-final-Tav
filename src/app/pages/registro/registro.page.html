@@ -7,6 +7,15 @@
 <ion-content>
   <ion-grid fixed>
     <form [formGroup]="formularioRegis" (ngSubmit)="validar()">
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Correo institucional</ion-label>
+            <ion-input formControlName="lastName" type="email"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
       <ion-row>
         <ion-col size="12">
           <ion-item>
@@ -43,63 +52,32 @@
         </ion-col>
       </ion-row>
 
+
       <ion-row>
         <ion-col size="12">
           <ion-item>
-            <ion-label>Genero</ion-label>
-            <ion-select formControlName="gender">
-              <ion-select-option value="masculino">Masculino</ion-select-option>
-              <ion-select-option value="femenino">Femenino</ion-select-option>
-              <ion-select-option value="otro">Otro</ion-select-option>
+            <ion-label>Carrera</ion-label>
+            <ion-select formControlName="carrera">
+              <ion-select-option value="analista">Analista</ion-select-option>
+              <ion-select-option value="programador">Programador</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-col>
       </ion-row>
 
-      <ion-row>
-        <ion-col size="12">
-            <ion-item>
-              <ion-label>Carrera</ion-label>
-              <ion-select formControlName="carrera">
-                <ion-select-option value="analista">Analista</ion-select-option>
-                <ion-select-option value="programador">Programador</ion-select-option>
-              </ion-select>
-            </ion-item>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col size="12">
-          <ion-item>
-            <ion-label>Edad</ion-label>
-            <ion-input formControlName="edad" type="number"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
 
       <ion-row>
         <ion-col size="12">
           <ion-item>
             <ion-label>Sede</ion-label>
             <ion-select formControlName="sede">
-              <ion-select-option value="peperoni">Agregar las sedes con un ciclo for</ion-select-option>
-              <ion-select-option value="hawaii">Agregar sedes</ion-select-option>
+              <ion-select-option value="bernardo">San Bernardo</ion-select-option>
+              <ion-select-option value="maipu">Maipu</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-col>
       </ion-row>
 
-      <ion-row>
-        <ion-col size="12">
-          <ion-item>
-            <ion-label>Comuna de origen</ion-label>
-            <ion-select formControlName="comunOrigen">
-              <ion-select-option value="peperoni">Agregar las comunas con un ciclo for</ion-select-option>
-              <ion-select-option value="hawaii"></ion-select-option>
-            </ion-select>
-          </ion-item>
-        </ion-col>
-      </ion-row>
 
       <ion-button color="primary" type="submit" role="submit">
         Login
