@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms'
-
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
+import { RegistroService } from '../../services/registro/registro.service'
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.page.html',
@@ -8,26 +8,35 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms'
 })
 export class RegistroPage {
 
-  public formularioRegis : FormGroup
+  public formularioRegis: FormGroup
 
-  constructor(private builder : FormBuilder
-    ) {
-      this.formularioRegis = builder.group({
-        username : ['',[Validators.required]],
-        password : ['',[Validators.required]],
-        firstName : ['',[Validators.required]],
-        lastName: ['',[Validators.required]],
-        gender: ['',[Validators.required]],
-        carrera : ['',[Validators.required]],
-        age : [0,[Validators.required, Validators.min(17), Validators.max(99)]],
-        sede : ['',[Validators.required]],
-        comunaOrigen : ['',[Validators.required]],
-      })
-     }
+  constructor(private builder: FormBuilder, private servicio: RegistroService
+  ) {
+    this.formularioRegis = builder.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      conductor: ['', [Validators.required]],
+      carrera: ['', [Validators.required]],
+      sede: ['', [Validators.required]],
 
-     public validar(){
+    })
+  }
 
-     }
+  public validar() {
+    this.servicio.validadorauth({
+      username: this.formularioRegis.value.username,
+      password: this.formularioRegis.value.password,
+      conductor: this.formularioRegis.value.conductor,
+      carrera: this.formularioRegis.value.carrera,
+      sede: this.formularioRegis.value.sede,
+      firstName: this.formularioRegis.value.firstName,
+      lastName: this.formularioRegis.value.lastName,
+      email: this.formularioRegis.value.email,
+
+    })
+  }
 
 
 }
