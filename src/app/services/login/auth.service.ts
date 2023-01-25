@@ -16,6 +16,7 @@ export class AuthService {
   public listarUsers$ = this.comportamientoListarUsuario.asObservable();
   constructor(private http: HttpClient, private ruta: Router) { }
 
+
   // inicio sesión para el validador
   public inicioSesion() {
     this.http.get<Array<Datoscompletos>>(`${this.urlauth}`)

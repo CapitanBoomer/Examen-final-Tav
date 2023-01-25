@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms'
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
-import {AuthService} from '../../services/login/auth.service';
-import {Datoscompletos} from '../../interfaces/usarios/usuarios'
+import { AuthService } from '../../services/login/auth.service';
+import { Datoscompletos } from '../../interfaces/usarios/usuarios'
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -11,12 +11,12 @@ import {Datoscompletos} from '../../interfaces/usarios/usuarios'
 export class LoginPage implements OnInit {
   public usurioInicio: Array<any> = [];
   public usuario!: Datoscompletos;
-  public formularioLog! : FormGroup;
+  public formularioLog!: FormGroup;
 
   constructor(
     private builder: FormBuilder,
-    private servicioauth:AuthService,
-    private router:Router
+    private servicioauth: AuthService,
+    private router: Router
   ) {
     this.formularioInicio()
   }
@@ -27,20 +27,40 @@ export class LoginPage implements OnInit {
 
     })
   }
-ionViewWillEnter(){
-  this.servicioauth.listarUsers$.subscribe(datos => { this.usurioInicio = datos; console.log(datos) });
-  this.servicioauth.inicioSesion()
-  console.log(this.usurioInicio)
-}
+  ionViewWillEnter() {
+    this.servicioauth.listarUsers$.subscribe(datos => { this.usurioInicio = datos; console.log(datos) });
+    this.servicioauth.inicioSesion()
+    console.log(this.usurioInicio)
+  }
   public iniciarSesion() {
     this.usuario = this.usurioInicio.find(user => {
       let inicio = this.formularioLog.value.username
-      return user.username=== inicio
+      return user.username === inicio
     });
     console.log(this.formularioLog.value)
     if (this.usuario) {
-      if (this.usuario.password == this.formularioLog.value.password) { if (this.usuario.conductor== true ) { this.router.navigate(['/menuauto']) }
-      else { this.router.navigate(['/menusinauto']) } }
+      if (this.usuario.password == this.formularioLog.value.password) {
+        if (this.usuario.conductor == true) {
+          this.router.navigate(['/menuauto'], {
+            queryParams: {
+              nombre: this.usuario.firstName,
+              apellido: this.usuario.lastName,
+              sede: this.usuario.sede,
+              carrera: this.usuario.carrera
+            }
+          })
+        }
+        else {
+          this.router.navigate(['/menusinauto'], {
+            queryParams: {
+              nombre: this.usuario.firstName,
+              apellido: this.usuario.lastName,
+              sede: this.usuario.sede,
+              carrera: this.usuario.carrera
+            }
+          })
+        }
+      }
       else { }
     }
 

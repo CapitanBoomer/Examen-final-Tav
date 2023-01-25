@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>usuarioConAuto</ion-title>
+  <ion-toolbar class="ion-text-center">
+    <img  width = 100px src="https://www.redcampussustentable.cl/wp-content/uploads/2022/07/DUOC-PNG.png" alt="">
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+<ion-button [routerLink]="['/regviaje']"[queryParams]="{nombre: this.nombre, apellido:this.apellido,sede:this.sede}">Ingresar viaje</ion-button>
 </ion-content>

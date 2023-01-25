@@ -35,6 +35,11 @@ const routes: Routes = [
     path: 'menusinauto',
     loadChildren: () => import('./pages/Menus/usuario-sin-auto/usuario-sin-auto.module').then( m => m.UsuarioSinAutoPageModule)
   },
+  {
+    path: 'regviaje',
+    loadChildren: () => import('./pages/formulario-viaje/formulario-viaje.module').then( m => m.FormularioViajePageModule)
+  },
+
 
 
 ];
