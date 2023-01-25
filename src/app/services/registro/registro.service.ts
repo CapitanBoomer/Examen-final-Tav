@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class RegistroService {
-  private urlauth: string = 'http://localhost:3000/usuarios'
+  private urlauth: string = 'https://basedatosexamen.up.railway.app/usuarios'
   public datosauth: Datoscompletos | null = null
   constructor(private http: HttpClient, private ruta: Router) { }
 
