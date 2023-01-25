@@ -1,8 +1,4 @@
 
-export interface Usuarios {
-  username:string,
-  password:string,
-}
 export interface Datoscompletos{
   id?: number,
   username: string,

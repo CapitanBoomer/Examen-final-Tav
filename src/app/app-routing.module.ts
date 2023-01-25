@@ -27,6 +27,15 @@ const routes: Routes = [
     path: 'registro',
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
+  {
+    path: 'menuauto',
+    loadChildren: () => import('./pages/Menus/usuario-con-auto/usuario-con-auto.module').then( m => m.UsuarioConAutoPageModule)
+  },
+  {
+    path: 'menusinauto',
+    loadChildren: () => import('./pages/Menus/usuario-sin-auto/usuario-sin-auto.module').then( m => m.UsuarioSinAutoPageModule)
+  },
+
 
 ];
 
