@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ResContraService {
 
-  public URL_RES: string = 'http://localhost:3000/usuarios';
+  public URL_RES: string = 'https://basedatosexamen.up.railway.app/usuarios';
   public email : string = '';
   constructor(
     public http: HttpClient
