@@ -27,15 +27,5 @@ export class AuthService {
 
   //Esta parte la hizo el Jhoel
 
-  public ObtenerContraseña({ username, email }: ObtCon): void {
-    this.http.get<Datoscompletos>(this.urlauth)
-      .subscribe(data => {
-        if (data) {
-          this.datosauth = data,
-            this.ruta.navigate(['/contrasena'])
-        }
-      })
-  }
-
 
 }
