@@ -17,7 +17,7 @@ export class RegistroPage {
       password: ['', [Validators.required]],
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
-      conductor: ['', [Validators.required]],
+      conductor: [false, [Validators.required]],
       carrera: ['', [Validators.required]],
       sede: ['', [Validators.required]],
 

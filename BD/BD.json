@@ -19,21 +19,6 @@
       "firstName": "Diego2",
       "lastName": "Castro2",
       "email": "Di2.Cas@duocuc.cl"
-    },
-    {
-      "id": 3,
-      "username": "username3",
-      "password": "password3",
-      "conductor": true,
-      "sede": "San Bernardo",
-      "firstName": "Diego3",
-      "lastName": "Castro3",
-      "email": "Di3.Cas@duocuc.cl"
-    },
-    {
-      "username": "dsadas",
-      "password": "dasdas",
-      "id": 4
     }
   ],
   "Carrera": [
@@ -85,8 +70,6 @@
     }
   ],
   "viaje": [
-    {
-
-    }
+    {}
   ]
 }

@@ -10,7 +10,7 @@ import { BehaviorSubject } from 'rxjs';
 
 
 export class AuthService {
-  private urlauth: string = 'https://basedatosexamen.up.railway.app/usuarios'
+  private urlauth: string = 'http://localhost:3000/usuarios'
   public datosauth: Datoscompletos | null = null;
   private comportamientoListarUsuario = new BehaviorSubject<Array<any>>([]);
   public listarUsers$ = this.comportamientoListarUsuario.asObservable();

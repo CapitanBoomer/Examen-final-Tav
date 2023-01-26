@@ -23,7 +23,7 @@ export class LoginPage implements OnInit {
   public formularioInicio() {
     this.formularioLog = this.builder.group({
       username: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
-      password: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(1000)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
 
     })
   }

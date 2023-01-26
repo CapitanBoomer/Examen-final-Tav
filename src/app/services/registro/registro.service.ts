@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class RegistroService {
-  private urlauth: string = 'https://basedatosexamen.up.railway.app/usuarios'
+  private urlauth: string = 'http://localhost:3000/usuarios'
   public datosauth: Datoscompletos | null = null
   constructor(private http: HttpClient, private ruta: Router) { }
 
@@ -20,7 +20,7 @@ export class RegistroService {
     }).subscribe(datos => {
       if(datos){
         this.datosauth = datos,
-        this.ruta.navigate(['/inicio'])
+        this.ruta.navigate(['/'])
       }
       })
   }

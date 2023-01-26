@@ -38,7 +38,11 @@ const routes: Routes = [
   {
     path: 'regviaje',
     loadChildren: () => import('./pages/formulario-viaje/formulario-viaje.module').then( m => m.FormularioViajePageModule)
+  },  {
+    path: 'contrasena',
+    loadChildren: () => import('./pages/contrasena/contrasena.module').then( m => m.ContrasenaPageModule)
   },
+
 
 
 
