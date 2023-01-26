@@ -1,13 +1,14 @@
 <ion-header>
   <ion-toolbar class="ion-text-center">
-    <img  width = 100px src="https://www.redcampussustentable.cl/wp-content/uploads/2022/07/DUOC-PNG.png" alt="">
+    <img width=100px src="https://www.redcampussustentable.cl/wp-content/uploads/2022/07/DUOC-PNG.png" alt="">
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid fixed>
-    <ion-img [src]="'https://www.irontec.com/image/trainingsFull/38-curso-desarrollo-apps-ionic.png'"></ion-img>
-
+    <div class="ion-text-center"><img width=270px
+        [src]="'https://o.remove.bg/downloads/d5324f60-7007-4b88-9fe3-42ff983df878/Yo_Te_llevo-removebg-preview.png'">
+    </div>
     <form [formGroup]="formularioLog" (ngSubmit)="iniciarSesion()">
       <ion-row>
         <ion-col>
@@ -48,7 +49,7 @@
       <ion-row>
         <ion-col>
           <ion-button expand="block" shape="round" color="warning" [routerLink]="['/registro']">
-            <ion-icon name="person-add-outline" slot="end" ></ion-icon>
+            <ion-icon name="person-add-outline" slot="end"></ion-icon>
             ¿No tienes una cuenta?
           </ion-button>
         </ion-col>

@@ -8,7 +8,8 @@ export interface Datoscompletos{
   sede : string,
   firstName: string,
   lastName: string,
-  email:string
+  email:string,
+  fotouser:string,
 }
 
 export interface ObtCon{

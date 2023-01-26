@@ -3,6 +3,7 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/login/auth.service';
 import { Datoscompletos } from '../../interfaces/usarios/usuarios'
+import { AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -16,10 +17,15 @@ export class LoginPage implements OnInit {
   constructor(
     private builder: FormBuilder,
     private servicioauth: AuthService,
-    private router: Router
+    private router: Router,
+    private alertController: AlertController,
   ) {
     this.formularioInicio()
   }
+
+  ngOnInit() {
+  }
+
   public formularioInicio() {
     this.formularioLog = this.builder.group({
       username: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
@@ -32,44 +38,53 @@ export class LoginPage implements OnInit {
     this.servicioauth.inicioSesion()
     console.log(this.usurioInicio)
   }
-  public iniciarSesion() {
+  public async iniciarSesion() {
     this.usuario = this.usurioInicio.find(user => {
       let inicio = this.formularioLog.value.username
       return user.username === inicio
     });
     console.log(this.formularioLog.value)
-    if (this.usuario) {
-      if (this.usuario.password == this.formularioLog.value.password) {
-        if (this.usuario.conductor == true) {
-          this.router.navigate(['/menuauto'], {
-            queryParams: {
-              nombre: this.usuario.firstName,
-              apellido: this.usuario.lastName,
-              sede: this.usuario.sede,
-              carrera: this.usuario.carrera
-            }
-          })
-        }
-        else {
-          this.router.navigate(['/menusinauto'], {
-            queryParams: {
-              nombre: this.usuario.firstName,
-              apellido: this.usuario.lastName,
-              sede: this.usuario.sede,
-              carrera: this.usuario.carrera
-            }
-          })
-        }
+    if (this.formularioLog.valid) {
+
+      if (this.usuario && this.usuario.password == this.formularioLog.value.password && this.usuario.conductor == true) {
+        this.router.navigate(['/menuauto'], {
+          queryParams: {
+            nombre: this.usuario.firstName,
+            apellido: this.usuario.lastName,
+            sede: this.usuario.sede,
+            carrera: this.usuario.carrera
+          }
+        })
       }
-      else { }
+      else {
+        this.router.navigate(['/menusinauto'], {
+          queryParams: {
+            nombre: this.usuario.firstName,
+            apellido: this.usuario.lastName,
+            sede: this.usuario.sede,
+            carrera: this.usuario.carrera
+          }
+        })
+      }
+    } else {
+      {
+        const alert = await this.alertController.create({
+
+          message: 'complete todos los campos',
+          buttons: ['Entendido'],
+        });
+
+        await alert.present();
+
+      }
     }
 
+
+
+
+
+
+
+
   }
-
-
-
-
-  ngOnInit() {
-  }
-
 }

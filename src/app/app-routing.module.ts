@@ -15,10 +15,7 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
-  {
-    path: 'inicio',
-    loadChildren: () => import('./pages/pagina-de-inicio/pagina-de-inicio.module').then( m => m.PaginaDeInicioPageModule)
-  },
+
   {
     path: 'recuperarCon',
     loadChildren: () => import('./pages/recuperar-password/recuperar-password.module').then( m => m.RecuperarPasswordPageModule)
@@ -38,10 +35,13 @@ const routes: Routes = [
   {
     path: 'regviaje',
     loadChildren: () => import('./pages/formulario-viaje/formulario-viaje.module').then( m => m.FormularioViajePageModule)
-  },  {
+  },
+  {
     path: 'contrasena',
     loadChildren: () => import('./pages/contrasena/contrasena.module').then( m => m.ContrasenaPageModule)
   },
+
+
 
 
 

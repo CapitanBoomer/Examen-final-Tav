@@ -1,16 +1,18 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>contrasena</ion-title>
+  <ion-toolbar class="ion-text-center">
+    <img slot="end"  width = 100px src="https://www.redcampussustentable.cl/wp-content/uploads/2022/07/DUOC-PNG.png" alt="">
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
-    <ion-card-header>
+    <ion-card-header class="ion-text-center">
+       <ion-card-subtitle> Esta es tu contraseña:
+       </ion-card-subtitle>
       <ion-card-title>
-        Esta es tu contraseña
+      {{pass}}
       </ion-card-title>
-      <ion-card-subtitle>{{pass}}</ion-card-subtitle>
+
     </ion-card-header>
   </ion-card>
 </ion-content>

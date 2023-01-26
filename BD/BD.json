@@ -1,40 +1,18 @@
 {
   "usuarios": [
     {
-      "id": 1,
-      "username": "username1",
-      "password": "password1",
+      "username": "carlosmen",
+      "password": "1234567",
       "conductor": false,
-      "sede": "San Bernardo",
-      "firstName": "Diego1",
-      "lastName": "Castro1",
-      "email": "Di1.Cas@duocuc.cl"
-    },
-    {
-      "id": 2,
-      "username": "username2",
-      "password": "password2",
-      "conductor": true,
-      "sede": "San Bernardo",
-      "firstName": "Diego2",
-      "lastName": "Castro2",
-      "email": "Di2.Cas@duocuc.cl"
+      "carrera": "programador",
+      "sede": "bernardo",
+      "firstName": "carlos",
+      "lastName": "petra",
+      "fotouser": "",
+      "id": 1
     }
   ],
-  "Carrera": [
-    {
-      "idCarrera": 1,
-      "nombreCarrera": "Analista"
-    },
-    {
-      "idCarrera": 2,
-      "nombreCarrera": "Programador"
-    },
-    {
-      "idCarrera": 3,
-      "nombreCarrera": "Cocina"
-    }
-  ],
+
   "Comunas": [
     {
       "idComuna": 1,
@@ -69,7 +47,7 @@
       "latitud": "-33.4005462"
     }
   ],
-  "viaje": [
-    {}
+  "viajes": [
+
   ]
 }

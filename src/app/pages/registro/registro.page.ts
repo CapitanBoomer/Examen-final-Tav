@@ -20,6 +20,7 @@ export class RegistroPage {
       conductor: [false, [Validators.required]],
       carrera: ['', [Validators.required]],
       sede: ['', [Validators.required]],
+      fotouser: ['', [Validators.required]],
 
     })
   }
@@ -34,7 +35,7 @@ export class RegistroPage {
       firstName: this.formularioRegis.value.firstName,
       lastName: this.formularioRegis.value.lastName,
       email: this.formularioRegis.value.email,
-
+      fotouser: this.formularioRegis.value.fotouser,
     })
   }
 
