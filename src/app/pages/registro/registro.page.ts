@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
+import { Router } from '@angular/router';
+import { Datoscompletos } from 'src/app/interfaces/usarios/usuarios';
 import { RegistroService } from '../../services/registro/registro.service'
 @Component({
   selector: 'app-registro',
@@ -8,36 +10,50 @@ import { RegistroService } from '../../services/registro/registro.service'
 })
 export class RegistroPage {
 
-  public formularioRegis: FormGroup
+  public usuario!: Datoscompletos;
+  public formularioReg!: FormGroup;
 
-  constructor(private builder: FormBuilder, private servicio: RegistroService
+  constructor(
+    private builder: FormBuilder,
+    private servicio:RegistroService,
+    private router: Router
   ) {
-    this.formularioRegis = builder.group({
-      username: ['', [Validators.required]],
-      password: ['', [Validators.required]],
-      firstName: ['', [Validators.required]],
-      lastName: ['', [Validators.required]],
-      conductor: [false, [Validators.required]],
-      carrera: ['', [Validators.required]],
-      sede: ['', [Validators.required]],
-      fotouser: ['', [Validators.required]],
-
+    this.formularioInicio()
+  }
+  public formularioInicio() {
+    this.formularioReg = this.builder.group({
+      username: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
+      correo: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
+      conductor: new FormControl(false, [Validators.required]),
+      carrera: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
+      sede: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
+      firstName: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
+      lastName: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
+      fotouser: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
     })
   }
+
+  ngOnInit() {
+  }
+
+
+
+
 
   public validar() {
-    this.servicio.validadorauth({
-      username: this.formularioRegis.value.username,
-      password: this.formularioRegis.value.password,
-      conductor: this.formularioRegis.value.conductor,
-      carrera: this.formularioRegis.value.carrera,
-      sede: this.formularioRegis.value.sede,
-      firstName: this.formularioRegis.value.firstName,
-      lastName: this.formularioRegis.value.lastName,
-      email: this.formularioRegis.value.email,
-      fotouser: this.formularioRegis.value.fotouser,
+    this.servicio.validadorReg({
+      correo: this.formularioReg.value.correo,
+      username: this.formularioReg.value.username,
+      password: this.formularioReg.value.password,
+      conductor: this.formularioReg.value.conductor,
+      carrera: this.formularioReg.value.carrera,
+      sede: this.formularioReg.value.sede,
+      firstName: this.formularioReg.value.firstName,
+      lastName: this.formularioReg.value.lastName,
+      fotouser: this.formularioReg.value.fotouser,
     })
   }
 
-
 }
+

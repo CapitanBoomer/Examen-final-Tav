@@ -1,18 +1,7 @@
 {
   "usuarios": [
-    {
-      "username": "carlosmen",
-      "password": "1234567",
-      "conductor": false,
-      "carrera": "programador",
-      "sede": "bernardo",
-      "firstName": "carlos",
-      "lastName": "petra",
-      "fotouser": "",
-      "id": 1
-    }
-  ],
 
+  ],
   "Comunas": [
     {
       "idComuna": 1,
@@ -47,7 +36,5 @@
       "latitud": "-33.4005462"
     }
   ],
-  "viajes": [
-
-  ]
+  "viajes": []
 }

@@ -42,7 +42,7 @@ export class RecuperarPasswordPage implements OnInit {
     console.log(this.formularioLog.value)
     if (this.usuario) {
       if (this.usuario.username == this.formularioLog.value.username) {
-        if (this.usuario.email == this.formularioLog.value.email) {
+        if (this.usuario.correo == this.formularioLog.value.correo) {
           this.router.navigate(['/contrasena'], {
             queryParams: {
               contraseña:this.usuario.password

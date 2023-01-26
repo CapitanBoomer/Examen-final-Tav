@@ -11,7 +11,7 @@ export class RegistroService {
   public datosauth: Datoscompletos | null = null
   constructor(private http: HttpClient, private ruta: Router) { }
 
-  public validadorauth(nuevosdatos: Datoscompletos) {
+  public validadorReg(nuevosdatos: Datoscompletos) {
     this.http.post<Datoscompletos>(this.urlauth,{...nuevosdatos},{
       headers:
       {

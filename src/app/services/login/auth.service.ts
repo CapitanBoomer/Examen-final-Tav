@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Datoscompletos, ObtCon } from '../../interfaces/usarios/usuarios';
+import { Datoscompletos} from '../../interfaces/usarios/usuarios';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
@@ -25,7 +25,6 @@ export class AuthService {
 
 
 
-  //Esta parte la hizo el Jhoel
 
 
 }

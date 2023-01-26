@@ -8,16 +8,9 @@ export interface Datoscompletos{
   sede : string,
   firstName: string,
   lastName: string,
-  email:string,
+  correo:string,
   fotouser:string,
 }
 
-export interface ObtCon{
-  username : string,
-  email : string
-}
 
 
-export interface Carrera extends Datoscompletos{
-  nombreCarrera : string
-}
