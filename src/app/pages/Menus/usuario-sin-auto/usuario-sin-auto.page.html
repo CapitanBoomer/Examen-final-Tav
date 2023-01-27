@@ -1,9 +1,25 @@
 <ion-header>
   <ion-toolbar class="ion-text-center">
-    <img slot="end"  width = 100px src="https://www.redcampussustentable.cl/wp-content/uploads/2022/07/DUOC-PNG.png" alt="">
+    <img width = 100px src="https://www.redcampussustentable.cl/wp-content/uploads/2022/07/DUOC-PNG.png" alt="">
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  {{name}}
+  <ion-label>Bienvenido: {{name}}</ion-label>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="start">
+    <ion-fab-button>
+      <ion-icon name="menu-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button>
+        <ion-icon name="car-sport-outline"></ion-icon>
+      </ion-fab-button>
+      <!--<ion-fab-button>
+        <ion-icon name="globe"></ion-icon>
+      </ion-fab-button>-->
+      <ion-fab-button [routerLink]="['/login']">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
