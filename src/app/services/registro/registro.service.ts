@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Datoscompletos } from '../../interfaces/usarios/usuarios';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,17 +12,12 @@ export class RegistroService {
   public datosauth: Datoscompletos | null = null
   constructor(private http: HttpClient, private ruta: Router) { }
 
-  public validadorReg(nuevosdatos: Datoscompletos) {
-    this.http.post<Datoscompletos>(this.urlauth,{...nuevosdatos},{
-      headers:
-      {
-        'Content-Type': 'application/json'
+  public agregarUsuario(nuevoUsuario : Datoscompletos): Observable<any>{
+    return this.http.post(this.urlauth, nuevoUsuario,{
+      headers :{
+        'Content-Type': 'application/json; charset=utf-8'
       }
-    }).subscribe(datos => {
-      if(datos){
-        this.datosauth = datos,
-        this.ruta.navigate(['/'])
-      }
-      })
+    })
   }
+
 }

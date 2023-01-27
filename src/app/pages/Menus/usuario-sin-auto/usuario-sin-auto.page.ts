@@ -6,14 +6,22 @@ import {ActivatedRoute} from '@angular/router'
   styleUrls: ['./usuario-sin-auto.page.scss'],
 })
 export class UsuarioSinAutoPage implements OnInit {
-public name: string ='';
+  public nombre: string ='';
+  public apellido: string ='';
+  public sede: string ='';
+  public carrera: string ='';
+  public foto: string ='';
   constructor(private rutaactiva:ActivatedRoute) { }
 
   ngOnInit() {
   }
   ionViewWillEnter(){
     this.rutaactiva.queryParams.subscribe(datosUser =>{
-      this.name = datosUser['nombre']||'sin nombre'
+      this.nombre = datosUser['nombre']||'sin nombre',
+      this.apellido = datosUser['apellido']||'sin apellido',
+      this.sede = datosUser['sede']||'sin sede'
+      this.carrera = datosUser['carrera']||'sin carrera',
+      this.foto = datosUser['foto']||'sin foto'
     })
   }
 }
