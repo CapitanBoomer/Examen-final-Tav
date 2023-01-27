@@ -23,14 +23,14 @@
     <ion-card>
       <ion-item>
         <ion-label position="stacked">Destino</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input formControlName="destino" type="text"></ion-input>
       </ion-item>
     </ion-card>
 
     <ion-card>
       <ion-item>
         <ion-label position="stacked">Costo por persona</ion-label>
-        <ion-input type="number"></ion-input>
+        <ion-input formControlName="monto" type="number"></ion-input>
       </ion-item>
     </ion-card>
 
@@ -39,7 +39,7 @@
         <ion-label>
           <p>tienes capacidad</p>
         </ion-label>
-        <ion-toggle color="warning" [checked]="capacidad"></ion-toggle>
+        <ion-toggle formControlName="capacidad" color="warning" [checked]="capacidad"></ion-toggle>
       </ion-item>
     </ion-card>
 

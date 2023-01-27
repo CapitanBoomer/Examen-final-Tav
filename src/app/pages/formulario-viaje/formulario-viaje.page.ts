@@ -36,7 +36,7 @@ export class FormularioViajePage implements OnInit {
     if(this.formulario.valid){
       this.viaje.llenarViajes(
         {
-          conductor: this.nombre +''+ this.apellido,
+          conductor: this.nombre +' '+ this.apellido,
           origen: this.Origen,
           destino: this.formulario.value.destino as string,
           monto: this.formulario.value.monto as number,
