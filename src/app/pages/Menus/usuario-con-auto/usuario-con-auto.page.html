@@ -1,6 +1,12 @@
 <ion-header>
   <ion-toolbar class="ion-text-center">
-    <img slot="end"  width = 100px src="https://www.redcampussustentable.cl/wp-content/uploads/2022/07/DUOC-PNG.png" alt="">
+    <img  width = 100px src="https://www.redcampussustentable.cl/wp-content/uploads/2022/07/DUOC-PNG.png" alt="">
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-label slot="end">Conductor: {{nombre}}</ion-label>
   </ion-toolbar>
 </ion-header>
 
@@ -16,26 +22,20 @@
 <ion-footer>
   <ion-toolbar>
     <ion-tabs>
-      <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="schedule">
-          <ion-icon name="calendar"></ion-icon>
-          <ion-label>Schedule</ion-label>
-          <ion-badge>6</ion-badge>
-        </ion-tab-button>
-
-        <ion-tab-button tab="speakers">
-          <ion-icon name="person-circle"></ion-icon>
-          <ion-label>Speakers</ion-label>
-        </ion-tab-button>
-
-        <ion-tab-button tab="map">
+      <ion-tab-bar slot="mapa">
+        <ion-tab-button tab="schedule" [routerLink]="['/#']">
           <ion-icon name="map"></ion-icon>
-          <ion-label>Map</ion-label>
+          <ion-label>Mapa</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="about">
+        <ion-tab-button tab="viaje">
+          <ion-icon name="car-outline"></ion-icon>
+          <ion-label>Viaje</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="Nosotros">
           <ion-icon name="information-circle"></ion-icon>
-          <ion-label>About</ion-label>
+          <ion-label>Nosotros</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>
