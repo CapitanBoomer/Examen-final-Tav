@@ -1,8 +1,8 @@
 export interface Viajes {
-  idViaje : number
+  idViaje ?: number
   origen : string,
   destino : string,
   conductor:string,
-  monto:number,
-  capacidad:boolean,
+  monto: number,
+  capacidad: boolean,
 }
