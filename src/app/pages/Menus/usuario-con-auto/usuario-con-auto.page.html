@@ -5,14 +5,39 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid fixed>
-    <ion-row>
-      <ion-col size="12"> </ion-col>
-    </ion-row>
-  </ion-grid>
 
+  <div id='map'></div>
 
 
 
 <ion-button [routerLink]="['/regviaje']"[queryParams]="{nombre: this.nombre, apellido:this.apellido,sede:this.sede}">Ingresar viaje</ion-button>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="schedule">
+          <ion-icon name="calendar"></ion-icon>
+          <ion-label>Schedule</ion-label>
+          <ion-badge>6</ion-badge>
+        </ion-tab-button>
+
+        <ion-tab-button tab="speakers">
+          <ion-icon name="person-circle"></ion-icon>
+          <ion-label>Speakers</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="map">
+          <ion-icon name="map"></ion-icon>
+          <ion-label>Map</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="about">
+          <ion-icon name="information-circle"></ion-icon>
+          <ion-label>About</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
