@@ -12,10 +12,13 @@ export class RegistroPage {
 
   public usuario!: Datoscompletos;
   public formularioReg!: FormGroup;
+  public imagenBase64 = '';
+  public cargandoImagen = false;
+
 
   constructor(
     private builder: FormBuilder,
-    private servicio:RegistroService,
+    private servicio: RegistroService,
     private router: Router
   ) {
     this.formularioInicio()
@@ -23,7 +26,7 @@ export class RegistroPage {
   public formularioInicio() {
     this.formularioReg = this.builder.group({
       username: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
-      correo: new FormControl('', [Validators.required]),
+      correo: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
       conductor: new FormControl(false, [Validators.required]),
       carrera: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
@@ -38,11 +41,8 @@ export class RegistroPage {
   }
 
 
-
-
-
   public validar() {
-    this.servicio.validadorReg({
+    this.servicio.agregarUsuario({
       correo: this.formularioReg.value.correo,
       username: this.formularioReg.value.username,
       password: this.formularioReg.value.password,
@@ -53,7 +53,9 @@ export class RegistroPage {
       lastName: this.formularioReg.value.lastName,
       fotouser: this.formularioReg.value.fotouser,
     })
+
   }
+
 
 }
 

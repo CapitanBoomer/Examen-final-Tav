@@ -44,47 +44,57 @@ export class LoginPage implements OnInit {
       return user.username === inicio
     });
     console.log(this.formularioLog.value)
+
     if (this.formularioLog.valid) {
 
-      if (this.usuario && this.usuario.password == this.formularioLog.value.password && this.usuario.conductor == true) {
-        this.router.navigate(['/menuauto'], {
-          queryParams: {
-            nombre: this.usuario.firstName,
-            apellido: this.usuario.lastName,
-            sede: this.usuario.sede,
-            carrera: this.usuario.carrera
+      if (this.usuario) {
+        if (this.usuario.password == this.formularioLog.value.password) {
+          if (this.usuario.conductor == true) {
+            this.router.navigate(['/menuauto'], {
+              queryParams: {
+                nombre: this.usuario.firstName,
+                apellido: this.usuario.lastName,
+                sede: this.usuario.sede,
+                carrera: this.usuario.carrera
+              }
+
+            })
           }
-        })
-      }
-      else {
-        this.router.navigate(['/menusinauto'], {
-          queryParams: {
-            nombre: this.usuario.firstName,
-            apellido: this.usuario.lastName,
-            sede: this.usuario.sede,
-            carrera: this.usuario.carrera
+          else {
+            this.router.navigate(['/menusinauto'], {
+              queryParams: {
+                nombre: this.usuario.firstName,
+                apellido: this.usuario.lastName,
+                sede: this.usuario.sede,
+                carrera: this.usuario.carrera,
+                foto: this.usuario.fotouser
+              }
+            })
           }
-        })
-      }
-    } else {
-      {
-        const alert = await this.alertController.create({
+        }
 
-          message: 'complete todos los campos',
-          buttons: ['Entendido'],
-        });
+      } else {
+        {
+          const alert = await this.alertController.create({
 
-        await alert.present();
+            message: 'Datos incorrectos',
+            buttons: ['Entendido'],
+          });
 
+          await alert.present();
+
+        }
       }
     }
+    else{
+      const alert = await this.alertController.create({
 
+        message: 'completa los campos',
+        buttons: ['Entendido'],
+      });
 
+      await alert.present();
 
-
-
-
-
-
+    }
   }
 }
