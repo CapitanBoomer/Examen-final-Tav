@@ -7,23 +7,34 @@
 <ion-content>
   <ion-label>Bienvenido: {{name}}</ion-label>
 
-  <div id='map'></div>
-
-  <ion-fab slot="fixed" vertical="bottom" horizontal="start">
-    <ion-fab-button>
-      <ion-icon name="menu-outline"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button>
-        <ion-icon name="car-sport-outline"></ion-icon>
-      </ion-fab-button>
-      <!--<ion-fab-button>
-        <ion-icon name="globe"></ion-icon>
-      </ion-fab-button>-->
-      <ion-fab-button [routerLink]="['/login']">
-        <ion-icon name="log-out-outline"></ion-icon>
-      </ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
+  <div id='map'></div><br>
 
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="schedule">
+          <ion-icon name="calendar"></ion-icon>
+          <ion-label>Schedule</ion-label>
+          <ion-badge>6</ion-badge>
+        </ion-tab-button>
+
+        <ion-tab-button tab="speakers">
+          <ion-icon name="person-circle"></ion-icon>
+          <ion-label>Speakers</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="map">
+          <ion-icon name="map"></ion-icon>
+          <ion-label>Map</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="about">
+          <ion-icon name="information-circle"></ion-icon>
+          <ion-label>About</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
