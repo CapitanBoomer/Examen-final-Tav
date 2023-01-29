@@ -11,6 +11,7 @@ declare var mapboxgl : any;
   templateUrl: './usuario-sin-auto.page.html',
   styleUrls: ['./usuario-sin-auto.page.scss'],
 })
+
 export class UsuarioSinAutoPage implements OnInit, ViewWillEnter {
 
   public name: string ='';

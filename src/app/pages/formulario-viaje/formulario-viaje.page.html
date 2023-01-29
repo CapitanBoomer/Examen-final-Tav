@@ -5,43 +5,45 @@
 </ion-header>
 
 <ion-content>
+  <form [formGroup]="formulario" (ngSubmit)="ingresarConductor()">
+    <ion-card>
+      <ion-item>
+        <ion-label position="stacked">Conductor</ion-label>
+        <ion-input type="text" [value]="nombre +' '+ apellido" [disabled]="true"></ion-input>
+      </ion-item>
+    </ion-card>
 
-  <ion-item>
-    <ion-label position="stacked">Conductor</ion-label>
-    <ion-input type="text" [value]="nombre +' '+ apellido" [disabled]="true"></ion-input>
-  </ion-item>
+    <ion-card>
+      <ion-item>
+        <ion-label position="stacked">Origen</ion-label>
+        <ion-input type="text" [value]="Origen" [disabled]="true"></ion-input>
+      </ion-item>
+    </ion-card>
 
+    <ion-card>
+      <ion-item>
+        <ion-label position="stacked">Destino</ion-label>
+        <ion-input formControlName="destino" type="text"></ion-input>
+      </ion-item>
+    </ion-card>
 
+    <ion-card>
+      <ion-item>
+        <ion-label position="stacked">Costo por persona</ion-label>
+        <ion-input formControlName="monto" type="number"></ion-input>
+      </ion-item>
+    </ion-card>
 
-  <ion-item>
-    <ion-label position="stacked">Origen</ion-label>
-    <ion-input type="text" [value]="Origen" [disabled]="true"></ion-input>
-  </ion-item>
+    <ion-card>
+      <ion-item>
+        <ion-label>
+          <p>tienes capacidad</p>
+        </ion-label>
+        <ion-toggle formControlName="capacidad" color="warning" [checked]="capacidad"></ion-toggle>
+      </ion-item>
+    </ion-card>
 
+    <ion-button expand="full" type="submit">Registrar viaje</ion-button>
+  </form>
 
-
-  <ion-item>
-    <ion-label position="stacked">Destino</ion-label>
-    <ion-input type="text" ></ion-input>
-  </ion-item>
-
-
-
-  <ion-item>
-    <ion-label>Costo por persona:</ion-label>
-    <ion-select>
-      <ion-select-option value="1000">1000</ion-select-option>
-      <ion-select-option value="2000">2000</ion-select-option>
-      <ion-select-option value="3000">3000</ion-select-option>
-    </ion-select>
-  </ion-item>
-
-
-
-  <ion-item>
-    <ion-label ><p>tienes capacidad</p> </ion-label>
-    <ion-toggle color="warning" [checked]="capacidad"></ion-toggle>
-  </ion-item>
-
-  <ion-button expand="full" (click)="registrarViaje()">Registrar viaje</ion-button>
 </ion-content>
