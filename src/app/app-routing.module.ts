@@ -39,7 +39,11 @@ const routes: Routes = [
   {
     path: 'contrasena',
     loadChildren: () => import('./pages/contrasena/contrasena.module').then( m => m.ContrasenaPageModule)
+  },  {
+    path: 'info-ruta',
+    loadChildren: () => import('./pages/info-ruta/info-ruta.module').then( m => m.InfoRutaPageModule)
   },
+
 
 
 
