@@ -6,3 +6,7 @@ export interface Viajes {
   monto: number,
   capacidad: boolean,
 }
+
+export interface listviajes {
+  viaje:Array<Viajes>
+}
