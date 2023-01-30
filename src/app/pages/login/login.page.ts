@@ -89,7 +89,7 @@ export class LoginPage implements OnInit {
     else{
       const alert = await this.alertController.create({
 
-        message: 'completa los campos',
+        message: 'Completa los campos',
         buttons: ['Entendido'],
       });
 

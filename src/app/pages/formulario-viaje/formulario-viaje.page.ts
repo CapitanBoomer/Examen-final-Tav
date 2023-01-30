@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ViajesService } from 'src/app/services/viajes/viajes.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-formulario-viaje',
@@ -18,7 +19,8 @@ export class FormularioViajePage implements OnInit {
 
   constructor(
     private rutaactiva: ActivatedRoute,
-    public viaje: ViajesService
+    public viaje: ViajesService,
+    private alerta: AlertController
     ) { }
 
   ngOnInit() {
@@ -32,7 +34,7 @@ export class FormularioViajePage implements OnInit {
     capacidad: new FormControl(false)
   })
 
-  public ingresarConductor(){
+  public async ingresarConductor(){
     if(this.formulario.valid){
       this.viaje.llenarViajes(
         {
@@ -43,6 +45,19 @@ export class FormularioViajePage implements OnInit {
           capacidad: this.formulario.value.capacidad as boolean
         }
       )
+    }else{
+      const alert = await this.alerta.create(
+        {
+          header: 'Porfavor llene los campos correctamente',
+          buttons:[
+            {
+              text:'Ok',
+              role: 'confirm'
+            }
+          ]
+        }
+      )
+      await alert.present()
     }
   }
 
