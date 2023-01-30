@@ -16,7 +16,9 @@ export class ViajesService {
   ) { }
 
   public async llenarViajes(infoNueva: Viajes){
-    this.client.post<Viajes>(this.VIAJES_URL,{...infoNueva},{
+    this.client.post<Viajes>(this.VIAJES_URL,
+      {...infoNueva},
+      {
       headers:{
         'ContentType':'application/json'
       }

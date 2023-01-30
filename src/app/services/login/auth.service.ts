@@ -10,17 +10,22 @@ import { BehaviorSubject } from 'rxjs';
 
 
 export class AuthService {
-  private urlauth: string = 'https://basedatosexamen.up.railway.app/usuarios'
+  private urlauth: string = 'https://basedatosexamen.up.railway.app/usuarios';
   public datosauth: Datoscompletos | null = null;
   private comportamientoListarUsuario = new BehaviorSubject<Array<any>>([]);
   public listarUsers$ = this.comportamientoListarUsuario.asObservable();
-  constructor(private http: HttpClient, private ruta: Router) { }
+
+  constructor(private http: HttpClient,
+     private ruta: Router
+     ) { }
 
 
   // inicio sesión para el validador
   public inicioSesion() {
     this.http.get<Array<Datoscompletos>>(`${this.urlauth}`)
-      .subscribe(datos => { this.comportamientoListarUsuario.next(datos) })
+      .subscribe(datos => {
+        this.comportamientoListarUsuario.next(datos)
+      })
   }
 
 

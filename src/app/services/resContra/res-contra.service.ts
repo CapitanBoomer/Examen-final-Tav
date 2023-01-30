@@ -12,6 +12,9 @@ export class ResContraService {
   ) { }
 
   public resetPassword(email: string) {
-    return this.http.post(this.URL_RES, { email: email });
+    return this.http.post(this.URL_RES,
+       {
+         email: email
+      });
   }
 }

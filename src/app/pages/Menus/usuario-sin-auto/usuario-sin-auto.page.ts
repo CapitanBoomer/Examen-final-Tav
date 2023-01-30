@@ -27,6 +27,8 @@ export class UsuarioSinAutoPage implements OnInit, ViewWillEnter {
 
   ngOnInit() {
   }
+
+
   ionViewWillEnter(){
     this.rutaactiva.queryParams.subscribe(datosUser =>{
       this.name = datosUser['nombre']||'sin nombre'
@@ -48,14 +50,8 @@ export class UsuarioSinAutoPage implements OnInit, ViewWillEnter {
     this.mapa.on('style.load', () => {
       this.mapa.resize();
 
-      // Marker
-      // var marker = new mapboxgl({
-      //   draggable: true
-      // })
-      // .setLngLat([0,0]) //aqui va this.longitud , this.latitud
-      // .addTo(this.mapa);
 
-      // Set marker options.
+
 
 
       // Insert the layer beneath any symbol layer.
@@ -106,6 +102,16 @@ export class UsuarioSinAutoPage implements OnInit, ViewWillEnter {
       );
     });
   }
+
+  // Marker
+      // var marker = new mapboxgl({
+      //   draggable: true
+      // })
+      // .setLngLat([0,0]) //aqui va this.longitud , this.latitud
+      // .addTo(this.mapa);
+
+      // Set marker options.
+
 
   public ionViewDidEnter() {
     this.subs.add(
