@@ -47,9 +47,14 @@ const routes: Routes = [
   {
     path: 'lista',
     loadChildren: () => import('./pages/lista-viajes/lista-viajes.module').then( m => m.ListaViajesPageModule)
-  },  {
+  },
+  {
     path: 'qr-apk',
     loadChildren: () => import('./pages/qr-apk/qr-apk.module').then( m => m.QrApkPageModule)
+  },
+  {
+    path: 'detalle',
+    loadChildren: () => import('./pages/detalle-viaje/detalle-viaje.module').then( m => m.DetalleViajePageModule)
   },
 
 

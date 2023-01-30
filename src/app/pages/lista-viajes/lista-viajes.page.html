@@ -1,11 +1,23 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>listaViajes</ion-title>
+    <ion-title>Viajes disponibles</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-item *ngFor="let viajes of listaviaje">
-  <p>{{viajes.conductor}}</p>
-</ion-item>
+  <ion-item *ngFor="let viajes of listaviaje" [routerLink]="['/detalle']" [queryParams]="{
+    conductor: this.viajes.conductor,
+     sede: this.viajes.origen,
+      destino: this.viajes.destino,
+      costo: this.viajes.monto,
+       puesto: this.viajes.capacidad
+      }">
+
+    <ion-label>
+      <h5>Conductor: {{viajes.conductor}}</h5>
+      <p>sede inicio: {{viajes.origen}}</p>
+      <ion-note>Destino: {{viajes.destino}}</ion-note>
+      <p>costo del viaje: ${{viajes.monto}}</p>
+    </ion-label>
+  </ion-item>
 </ion-content>
