@@ -10,10 +10,8 @@ import { RegistroService } from '../../services/registro/registro.service'
 })
 export class RegistroPage {
 
-  public usuario!: Datoscompletos;
   public formularioReg!: FormGroup;
-  public imagenBase64 = '';
-  public cargandoImagen = false;
+
 
 
   constructor(
@@ -25,15 +23,15 @@ export class RegistroPage {
   }
   public formularioInicio() {
     this.formularioReg = this.builder.group({
-      username: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
-      correo: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
+      username: new FormControl('', [Validators.required]),
+      correo: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
       conductor: new FormControl(false, [Validators.required]),
-      carrera: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
-      sede: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
-      firstName: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
-      lastName: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
-      fotouser: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
+      carrera: new FormControl('', [Validators.required]),
+      sede: new FormControl('', [Validators.required]),
+      firstName: new FormControl('', [Validators.required]),
+      lastName: new FormControl('', [Validators.required]),
+
     })
   }
 
@@ -50,8 +48,7 @@ export class RegistroPage {
       carrera: this.formularioReg.value.carrera,
       sede: this.formularioReg.value.sede,
       firstName: this.formularioReg.value.firstName,
-      lastName: this.formularioReg.value.lastName,
-      fotouser: this.formularioReg.value.fotouser,
+      lastName: this.formularioReg.value.lastName
     })
 
   }

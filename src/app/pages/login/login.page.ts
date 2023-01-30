@@ -67,7 +67,6 @@ export class LoginPage implements OnInit {
                 apellido: this.usuario.lastName,
                 sede: this.usuario.sede,
                 carrera: this.usuario.carrera,
-                foto: this.usuario.fotouser
               }
             })
           }

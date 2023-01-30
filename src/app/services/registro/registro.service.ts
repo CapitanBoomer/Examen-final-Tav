@@ -10,17 +10,22 @@ import { AlertController } from '@ionic/angular';
 })
 export class RegistroService {
   private urlauth: string = 'https://basedatosexamen.up.railway.app/usuarios'
-  public datosauth: Datoscompletos | null = null
+  public registro: Datoscompletos | null = null
 
   constructor(private http: HttpClient,
      private ruta: Router,
      private mensaje: AlertController
      ) { }
 
-  public agregarUsuario(nuevoUsuario : Datoscompletos): Observable<any>{
-    return this.http.post(this.urlauth, nuevoUsuario,{
+  public agregarUsuario(nuevoUsuario : Datoscompletos){
+    return this.http.post<Datoscompletos>(this.urlauth, {...nuevoUsuario},{
       headers :{
         'Content-Type': 'application/json; charset=utf-8'
+      }
+    }).subscribe(datos =>{
+      if(datos){
+        this.registro = datos;
+        this.ruta.navigate(['/'])
       }
     })
 

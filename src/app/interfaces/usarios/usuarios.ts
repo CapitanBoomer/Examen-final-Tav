@@ -9,7 +9,7 @@ export interface Datoscompletos{
   firstName: string,
   lastName: string,
   correo:string,
-  fotouser:string,
+
 }
 
 
