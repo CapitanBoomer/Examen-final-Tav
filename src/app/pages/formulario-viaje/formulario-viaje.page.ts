@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ViajesService } from 'src/app/services/viajes/viajes.service';
 import { AlertController } from '@ionic/angular';
 
@@ -27,11 +27,11 @@ export class FormularioViajePage implements OnInit {
   }
 
   formulario = new FormGroup({
-    conductor: new FormControl(''),
-    origen: new FormControl(''),
-    destino: new FormControl(''),
-    monto: new FormControl(0),
-    capacidad: new FormControl(false)
+    conductor: new FormControl('',[Validators.required]),
+    origen: new FormControl('',[Validators.required]),
+    destino: new FormControl('',[Validators.required]),
+    monto: new FormControl(0,[Validators.required]),
+    capacidad: new FormControl(false,[Validators.required])
   })
 
   public async ingresarConductor(){
