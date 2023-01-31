@@ -15,7 +15,7 @@ export class FormularioViajePage implements OnInit {
   public apellido: string = '';
   public Origen: string = '';
   public peso: number = 0
-  public capacidad: boolean = true;
+  public capacidad: number = 0;
 
   constructor(
     private rutaactiva: ActivatedRoute,
@@ -31,7 +31,7 @@ export class FormularioViajePage implements OnInit {
     origen: new FormControl('',[Validators.required]),
     destino: new FormControl('',[Validators.required]),
     monto: new FormControl(0,[Validators.required]),
-    capacidad: new FormControl(false,[Validators.required])
+    capacidad: new FormControl(0,[Validators.required])
   })
 
   public async ingresarConductor(){
@@ -42,7 +42,7 @@ export class FormularioViajePage implements OnInit {
           origen: this.Origen,
           destino: this.formulario.value.destino as string,
           monto: this.formulario.value.monto as number,
-          capacidad: this.formulario.value.capacidad as boolean
+          capacidad: this.formulario.value.capacidad as number
         }
       )
     }else{

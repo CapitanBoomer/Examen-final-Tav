@@ -4,7 +4,7 @@ export interface Viajes {
   destino : string,
   conductor:string,
   monto: number,
-  capacidad: boolean,
+  capacidad: number,
 }
 
 export interface listviajes {
