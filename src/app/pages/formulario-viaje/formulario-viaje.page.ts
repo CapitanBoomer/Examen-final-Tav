@@ -21,9 +21,44 @@ export class FormularioViajePage implements OnInit {
     private rutaactiva: ActivatedRoute,
     public viaje: ViajesService,
     private alerta: AlertController
-    ) { }
+  ) { }
 
   ngOnInit() {
+  }
+
+  formulario = new FormGroup({
+    conductor: new FormControl('', [Validators.required]),
+    origen: new FormControl('', [Validators.required]),
+    destino: new FormControl('', [Validators.required]),
+    monto: new FormControl(0, [Validators.required]),
+    capacidad: new FormControl(0, [Validators.required])
+  })
+
+  public async ingresarConductor() {
+    if (this.formulario.valid) {
+      this.viaje.llenarViajes(
+        {
+          conductor: this.nombre + ' ' + this.apellido,
+          origen: this.Origen,
+          destino: this.formulario.value.destino as string,
+          monto: this.formulario.value.monto as number,
+          capacidad: this.formulario.value.capacidad as number
+        }
+      )
+    } else {
+      const alert = await this.alerta.create(
+        {
+          header: 'Porfavor llene los campos correctamente',
+          buttons: [
+            {
+              text: 'Ok',
+              role: 'confirm'
+            }
+          ]
+        }
+      )
+      await alert.present()
+    }
   }
 
   ionViewWillEnter() {
@@ -34,26 +69,5 @@ export class FormularioViajePage implements OnInit {
     })
   }
 
-
-  formulario = new FormGroup({
-    conductor: new FormControl('',[Validators.required]),
-    origen: new FormControl('',[Validators.required]),
-    destino: new FormControl('',[Validators.required]),
-    monto: new FormControl(0,[Validators.required]),
-    capacidad: new FormControl(0,[Validators.required])
-  })
-
-  public async ingresarConductor(){
-
-      this.viaje.llenarViajes(
-        {
-          conductor: this.nombre +' '+ this.apellido,
-          origen: this.Origen,
-          destino: this.formulario.value.destino as string,
-          monto: this.formulario.value.monto as number,
-          capacidad: this.formulario.value.capacidad as number
-        }
-      )
-    }
 
 }
