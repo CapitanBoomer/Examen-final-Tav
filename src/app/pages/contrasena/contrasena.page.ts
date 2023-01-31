@@ -13,7 +13,7 @@ public pass: string = ''
   }
 ionViewWillEnter(){
   this.rutaactiva.queryParams.subscribe(data=>{
-    this.pass = data['contraseña']||'contraseña no existe'
+    this.pass = data['pass']||'contraseña no existe'
   })
 }
 }
