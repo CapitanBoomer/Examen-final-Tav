@@ -34,7 +34,7 @@ export class DetalleViajePage implements OnInit {
     if (this.capacidad > 1 || this.capacidad === 1) {
       const alertaSi = await this.alert.create({
         header:'Fijando viaje a '+ this.destino,
-        subHeader:'Porfavor espere fuera de su sede',
+        subHeader:'Por favor espere fuera de su sede',
         buttons:[{
           text:'Gracias',
           role:'confirm'

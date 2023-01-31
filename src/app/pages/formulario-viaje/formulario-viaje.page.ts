@@ -35,7 +35,7 @@ export class FormularioViajePage implements OnInit {
   })
 
   public async ingresarConductor() {
-    if (this.formulario.valid) {
+
       this.viaje.llenarViajes(
         {
           conductor: this.nombre + ' ' + this.apellido,
@@ -45,20 +45,7 @@ export class FormularioViajePage implements OnInit {
           capacidad: this.formulario.value.capacidad as number
         }
       )
-    } else {
-      const alert = await this.alerta.create(
-        {
-          header: 'Porfavor llene los campos correctamente',
-          buttons: [
-            {
-              text: 'Ok',
-              role: 'confirm'
-            }
-          ]
-        }
-      )
-      await alert.present()
-    }
+
   }
 
   ionViewWillEnter() {
