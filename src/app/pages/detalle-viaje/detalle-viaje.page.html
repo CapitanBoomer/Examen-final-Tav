@@ -1,10 +1,26 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>detalleViaje</ion-title>
+    <ion-title>Detalle Viaje</ion-title>
+  </ion-toolbar>
+  <ion-toolbar class="ion-text-center">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-{{conductor}}
-{{capacidad}}
+  <ion-card-title class="ion-text-center">
+    Nombre del Conductor:
+    <br>
+    {{conductor}}
+  </ion-card-title>
+  <ion-card-header class="ion-text-center">
+    Destino:
+    <br>
+    {{destino}}
+  </ion-card-header>
+  <ion-button (click)="pedir()" expand="full" shape="round">
+    Solicitar Viaje
+  </ion-button>
 </ion-content>
