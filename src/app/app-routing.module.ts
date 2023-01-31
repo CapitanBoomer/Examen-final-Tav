@@ -37,7 +37,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/formulario-viaje/formulario-viaje.module').then( m => m.FormularioViajePageModule)
   },
   {
-    path: 'contrasena',
+    path: 'pass',
     loadChildren: () => import('./pages/contrasena/contrasena.module').then( m => m.ContrasenaPageModule)
   },
   {
