@@ -123,7 +123,7 @@ export class UsuarioSinAutoPage implements OnInit, ViewWillEnter {
             pos.coords.longitude,
             pos.coords.latitude,
           ])
-          console.log(pos)
+          // console.log(pos)
             const marker = new mapboxgl.Marker({
             color: "#FFB800",
             draggable: false

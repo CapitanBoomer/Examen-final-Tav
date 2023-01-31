@@ -34,16 +34,18 @@ export class LoginPage implements OnInit {
     })
   }
   ionViewWillEnter() {
-    this.servicioauth.listarUsers$.subscribe(datos => { this.usurioInicio = datos; console.log(datos) });
+    this.servicioauth.listarUsers$.subscribe(datos => { this.usurioInicio = datos;
+      //  console.log(datos)
+       });
     this.servicioauth.inicioSesion()
-    console.log(this.usurioInicio)
+    // console.log(this.usurioInicio)
   }
   public async iniciarSesion() {
     this.usuario = this.usurioInicio.find(user => {
       let inicio = this.formularioLog.value.username
       return user.username === inicio
     });
-    console.log(this.formularioLog.value)
+    // console.log(this.formularioLog.value)
 
     if (this.formularioLog.valid) {
 

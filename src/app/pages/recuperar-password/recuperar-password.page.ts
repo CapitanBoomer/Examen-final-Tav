@@ -35,9 +35,11 @@ export class RecuperarPasswordPage implements OnInit {
     })
   }
   ionViewWillEnter() {
-    this.servicioauth.listarUsers$.subscribe(datos => { this.usurioInicio = datos; console.log(datos) });
+    this.servicioauth.listarUsers$.subscribe(datos => { this.usurioInicio = datos;
+      //  console.log(datos)
+      });
     this.servicioauth.inicioSesion()
-    console.log(this.usurioInicio)
+    // console.log(this.usurioInicio)
   }
 
   public async validarpass() {
@@ -45,13 +47,13 @@ export class RecuperarPasswordPage implements OnInit {
       let inicio = this.formularioLog.value.username
       return user.username === inicio
     });
-    console.log(this.formularioLog.value)
+    // console.log(this.formularioLog.value)
 
     if (this.formularioLog.valid) {
 
       if (this.usuario) {
         if (this.usuario.username == this.formularioLog.value.username) {
-          if (this.usuario.correo == this.usuario.correo) {
+          if (this.usuario.correo == this.formularioLog.value.correo) {
             this.router.navigate(['/pass'], {
               queryParams: {
                 pass:this.usuario.password
