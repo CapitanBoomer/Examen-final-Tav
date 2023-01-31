@@ -26,6 +26,15 @@ export class FormularioViajePage implements OnInit {
   ngOnInit() {
   }
 
+  ionViewWillEnter() {
+    this.rutaactiva.queryParams.subscribe(datosUser => {
+      this.nombre = datosUser['nombre'] || 'sin nombre',
+        this.apellido = datosUser['apellido'] || 'sin apellido',
+        this.Origen = datosUser['sede'] || 'sin sede'
+    })
+  }
+
+
   formulario = new FormGroup({
     conductor: new FormControl('',[Validators.required]),
     origen: new FormControl('',[Validators.required]),
@@ -35,7 +44,7 @@ export class FormularioViajePage implements OnInit {
   })
 
   public async ingresarConductor(){
-    if(this.formulario.valid){
+
       this.viaje.llenarViajes(
         {
           conductor: this.nombre +' '+ this.apellido,
@@ -45,29 +54,6 @@ export class FormularioViajePage implements OnInit {
           capacidad: this.formulario.value.capacidad as number
         }
       )
-    }else{
-      const alert = await this.alerta.create(
-        {
-          header: 'Porfavor llene los campos correctamente',
-          buttons:[
-            {
-              text:'Ok',
-              role: 'confirm'
-            }
-          ]
-        }
-      )
-      await alert.present()
     }
-  }
-
-  ionViewWillEnter() {
-    this.rutaactiva.queryParams.subscribe(datosUser => {
-      this.nombre = datosUser['nombre'] || 'sin nombre',
-        this.apellido = datosUser['apellido'] || 'sin apellido',
-        this.Origen = datosUser['sede'] || 'sin sede'
-    })
-  }
-
 
 }

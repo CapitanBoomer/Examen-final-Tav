@@ -32,9 +32,9 @@ export class UsuarioConAutoPage implements OnInit {
   }
   ionViewWillEnter(){
     this.rutaactiva.queryParams.subscribe(datosUser =>{
-      this.nombre = datosUser['nombre']||'sin nombre',
+      this.nombre = datosUser['nombre']||'',
       this.apellido = datosUser['apellido']||'sin apellido',
-      this.sede = datosUser['sede']||'sin sede'
+      this.sede = datosUser['sede']||''
       this.carrera = datosUser['carrera']||'sin carrera'
     })
 
