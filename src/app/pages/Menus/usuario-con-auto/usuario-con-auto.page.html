@@ -1,15 +1,29 @@
 <ion-header>
   <ion-toolbar class="ion-text-center">
-    <img  width = 100px src="https://www.redcampussustentable.cl/wp-content/uploads/2022/07/DUOC-PNG.png" alt="">
+
+    <ion-chip slot="start">
+      <ion-label>{{nombre}}</ion-label>
+      <ion-avatar>
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+    </ion-chip>
+    <img width=100px src="https://www.redcampussustentable.cl/wp-content/uploads/2022/07/DUOC-PNG.png" alt="">
   </ion-toolbar>
-  <ion-toolbar>
+
+  <ion-toolbar class="ion-text-center">
+    <ion-chip slot="end">
+      <ion-label>{{sede}}</ion-label>
+      <ion-icon name="pin" color="primary"></ion-icon>
+    </ion-chip>
+
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-label slot="end">Conductor: {{nombre}}</ion-label>
+
+
+
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
 
   <div id='map'></div>
@@ -29,15 +43,11 @@
           <ion-label>Mapa</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="viaje">
-          <ion-icon name="car-outline"></ion-icon>
-          <ion-label>Viaje</ion-label>
+        <ion-tab-button [routerLink]="['/regviaje']">
+          <ion-icon name="create-outline"></ion-icon>
+          <ion-label>Registrar viaje</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="Nosotros">
-          <ion-icon name="information-circle"></ion-icon>
-          <ion-label>Nosotros</ion-label>
-        </ion-tab-button>
       </ion-tab-bar>
     </ion-tabs>
   </ion-toolbar>

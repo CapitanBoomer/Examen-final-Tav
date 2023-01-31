@@ -15,6 +15,7 @@ declare var mapboxgl : any;
 export class UsuarioSinAutoPage implements OnInit, ViewWillEnter {
 
   public name: string ='';
+  public sede: string ='';
   private subs = new Subscription();
   longitude : number = 0;
   latitude : number = 0;
@@ -31,7 +32,8 @@ export class UsuarioSinAutoPage implements OnInit, ViewWillEnter {
 
   ionViewWillEnter(){
     this.rutaactiva.queryParams.subscribe(datosUser =>{
-      this.name = datosUser['nombre']||'sin nombre'
+      this.name = datosUser['nombre']||'sin nombre',
+      this.sede = datosUser['sede']||'sin sede'
     })
 
     mapboxgl.accessToken = 'pk.eyJ1IjoiZ2d4c2F0YW5hZWwiLCJhIjoiY2xkYXZ1ajJlMG16NjN2bXBhd2FmOHpmOCJ9.84MiostjKbLN-VCopRMVRA';
